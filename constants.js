@@ -1,27 +1,27 @@
 // Options the user could type in
 const prompts = [
-  ["dolor","lesión","lesion","tratamiento","recuperacion","paciente","masaje","contractura","accidente","molestia"],
+  ["dolor","lesión","lesion","tratamiento","recuperacion","recuperación","paciente","masaje","contractura","accidente","molestia"],
   ["nutricion","nutrición","dieta","alimentación","alimentacion","comida","peso","sobrepeso",],
-  ["psicologia","psicologa","psicologo","ayuda","aprendizaje","educacion","educación","crisis"],
-  ["podologia","pies","pie","Psicología","plantares","deformacion","deformación","uña","uñas","tendinitis","pisada","plantilla","plantillas"],
-  ["entrenamiento","personal","deporte","rutinas","rutina","cardio","ejercicios","ejercicio","fortalecer","muscular","musculacion","musculación"],
-  ["Yogalates","yoga","pilates","meditación","meditacion","terapeuticos"],
+  ["psicologia","psicología","psicologa","psicologo","psicóloga","psicólogo","ayuda","aprendizaje","educacion","educación","crisis"],
+  ["podologia","podología","pies","pie","plantares","deformacion","deformación","uña","uñas","tendinitis","pisada","plantilla","plantillas"],
+  ["entrenamiento","personal","deporte","rutinas","rutina","cardio","ejercicios","ejercicio","fortalecer","fortalece","muscular","musculacion","musculación"],
+  ["yogalates","yoga","pilates","meditación","meditacion","terapéuticos","terapeuticos"],
   ["baile","ritmo","ritmos","pareja","bailar"],
-  ["Co-Working","coworking","co-working","Reserva","trabajo","alquiler","sala","despacho","espacio"],
-  ["cita","horarios","hora","horario","citas"]
+  ["coworking","co-working","reserva","trabajo","alquiler","sala","despacho","espacio"],
+  ["cita","horarios","hora","horario","citas","reserver","coger","cogido"]
 ]
 
 // Possible responses, in corresponding order
 
 const replies = [
-  ["Disponemos de servicios de Fisioterapia Personalizados."],
-  ["Disponemos de servicios de nustrición"],
+  ["Disponemos de servicios de Fisioterapia personalizados."],
+  ["Disponemos de servicios de Nutrición"],
   ["Disponemos de servicios de Psicología"],
   ["Disponemos de servicios de Podología"],
   ["Disponemos de servicios de Entrenamiento Personal"],
   ["Disponemos de servicios de YogaLates"],
   ["Disponemos de clases de Baile"],
-  ["Reserva nuestras salas, a tu disposición"],
+  ["Reserva nuestras salas de Co-Working y Gimnasio"],
   ["Puedes solicitar citas y reservas con nosotros"]
   
 ]
@@ -29,9 +29,8 @@ const replies = [
 // Random for any other user input
 
 const alternative = [
-  "Los siento no te he entendido",
-  "por fabor se mas especifico en lo que deseas",
-  "perdona, tuve mala noche y no te he entendido"
+  "Lo siento, no te he entendido",
+  "Por favor, ¿puede ser más específico?"
 ]
 
 // Whatever else you want :)

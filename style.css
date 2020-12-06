@@ -4,13 +4,14 @@
 
 html {
 	height: 100%;
-
+	width: 100%;
 }
 
 body {
   font-family: 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, Helvetica,
-    sans-serif;
+	sans-serif;
+	font-size: 1em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 	background-color:#F4F4F4;
@@ -27,8 +28,9 @@ span {
 }
 
 .container {
+	
 	display: flex;
-  justify-content: center;
+  	justify-content: center;
 	align-items: center;
 	width: 100%;
 	height: 100%;
@@ -58,8 +60,7 @@ input {
 }
 
 .messages {
-	display: flex;
-	flex-direction: column;
+	
 	overflow: scroll;
 	height: 90%;
 	width: 100%;
@@ -75,6 +76,10 @@ input {
 #bot {
 	margin-left: auto;
 }
+#logo {
+	position: relative;
+	top:-25px
+}
 
 .avatar {
 	height: 25px;
@@ -85,24 +90,28 @@ input {
 	align-items: center;
 	margin: 1%;
 }
-.inputMicro{
-	display: block;
-}
+
 #voiceRec{
 	top:15px;
 	position: relative;
 	cursor: pointer;
-	
 }
-/* Mobile */
+
+
 
 @media only screen and (max-width: 980px) {
-  .container {
-		flex-direction: column; 
-		justify-content: flex-start;
-	}
-	.chat {
-		width: 75vw;
-		margin: 10vw;
-	}
-}
+	.container {
+		  flex-direction: column; 
+		  justify-content: flex-start;
+	  }
+	  .chat {
+		  width: 75vw;
+		  margin: 10vw;
+	  }
+  }
+  
+ 
+
+
+ 
+

@@ -1,5 +1,4 @@
 var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
-var SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList
 
 var recognition = new SpeechRecognition();
  
