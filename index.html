@@ -2,7 +2,8 @@
 <html>
 
 <head>
-	<meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
+	
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Chatbot</title>
 	<link rel="icon" href="bot.png" />
@@ -11,20 +12,22 @@
 
 <body>
 	<div id="container" class="container">
-		<div id="chat" class="chat">
-			<div id="messages" class="messages"></div>
-			<div class="contentMicroInput">
-				<img src="microfono.png" id="voiceRec" height="35vh" />
-				<input id="input" type="text" placeholder="&iquest En qu&eacute puedo ayudarte ?" autocomplete="off" autofocus="true" />
+		<div >
+			<span id="btn" class="btnIniciar" onclick="openChat()">Iniciar Chat</span>
+			<div id="chat" class="chat">
+				<div id="messages" class="messages"></div>
+				<div class="contentMicroInput">
+					<img src="microfono.png" id="voiceRec" height="35vh" />
+					<input id="input" type="text" placeholder="&iquest En qu&eacute puedo ayudarte ?" autocomplete="off" autofocus="true" />
+				</div>
 			</div>
 		</div>
 		<img id="logo" src="logo.png" alt="Robot cartoon" height="300vh">
 	</div>
 	
 </body>
+<script type="text/javascript" src="detectBrowser.js"></script>
 <script type="text/javascript" src="index.js"></script>
 <script type="text/javascript" src="constants.js"></script>
-<script type="text/javascript" src="speech.js"></script>
-<script type="text/javascript" src="recognitionVoice.js"></script>
 
 </html>

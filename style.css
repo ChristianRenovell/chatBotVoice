@@ -28,28 +28,37 @@ span {
 }
 
 .container {
-	
 	display: flex;
   	justify-content: center;
 	align-items: center;
 	width: 100%;
 	height: 100%;
 }
-
+.btnIniciar{
+	background-color: rgb(218, 218, 218);
+	color: rgb(56, 56, 56);
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.btnIniciar:hover{
+	background-color: rgb(230, 230, 230);
+}
+	
 .chat {
+	display: flex;
 	height: 300px;
 	width: 50vw;
-	display: flex;
 	flex-direction: column;
   	justify-content: center;
 	align-items: center;
 } 
-
 ::-webkit-input-placeholder { 
 	color: .711 
 }
  
 input { 
+	display: none;
 	border: 0; 
 	padding: 15px; 
 	margin-left: auto;
@@ -60,7 +69,8 @@ input {
 }
 
 .messages {
-	
+	display: flex;
+	flex-direction: column;
 	overflow: scroll;
 	height: 90%;
 	width: 100%;
@@ -92,6 +102,7 @@ input {
 }
 
 #voiceRec{
+	display: none;
 	top:15px;
 	position: relative;
 	cursor: pointer;

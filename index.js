@@ -1,19 +1,48 @@
-var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+try {
+  var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition
+  var recognition = new SpeechRecognition();
+  recognition.continuous = false;
+  recognition.lang = 'es-ES';
+  recognition.interimResults = false;
+  recognition.maxAlternatives = 1;
 
-var recognition = new SpeechRecognition();
- 
-recognition.continuous = false;
-recognition.lang = 'es-ES';
-recognition.interimResults = false;
-recognition.maxAlternatives = 1;
+  //reconocimiento de voz
+  document.getElementById("voiceRec").onclick = function () {
+    recognition.start();
+  };
+  recognition.onresult = function (event) {
+    let input = event.results[0][0].transcript;
+    let arrayWords = input.split(' ');
+    output(arrayWords, input);
+  }
+  recognition.onspeechend = function () {
+    recognition.stop();
+  }
+} catch { }
+
+
+//abre el chat
+function openChat() {
+  let browser = getBrowser();
+  //micro desabilitado en firefox
+  console.log(browser)
+  if (browser == "chrome") {
+    document.getElementById("voiceRec").style.display = "inline";
+  }else{
+    document.getElementById("voiceRec").style.display = "none";
+  }
+  document.getElementById("input").style.display = "inline";
+  document.getElementById("btn").style.display = "none";
+  addChat("hola soy tu asistente de fisioproyectos, ¿en que puedo ayudarte?")
+}
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const inputField = document.getElementById("input");
-
   inputField.addEventListener("keydown", (e) => {
     if (e.code === "Enter") {
       let input = inputField.value;
-
+      console.log(input)
       inputField.value = "";
       let arrayWords = input.split(' ');
       output(arrayWords, input);
@@ -21,28 +50,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.getElementById("voiceRec").onclick = function () {
-    recognition.start();
-};
-recognition.onresult = function(event) {
 
-  let input = event.results[0][0].transcript;
-  console.log(input)
-  let arrayWords = input.split(' ');
-      output(arrayWords, input);
-}
-recognition.onspeechend = function() {
-  recognition.stop();
-}
+
 
 function output(arrayWords, inputComplete) {
-
   let product;
   let text;
 
   for (let x = 0; x < arrayWords.length; x++) {
 
-    text = arrayWords[x].toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
+    text = arrayWords[x].toLowerCase().trim();
+    console.log(text)
 
     if (compare(prompts, replies, text)) {
       product = compare(prompts, replies, text);
@@ -85,11 +103,17 @@ function compare(promptsArray, repliesArray, string) {
 function addChat(product, inputComplete) {
   const messagesContainer = document.getElementById("messages");
 
-  let userDiv = document.createElement("div");
-  userDiv.id = "user";
-  userDiv.className = "user response";
-  userDiv.innerHTML = `<img src="user.png" class="avatar"><span>${inputComplete}</span>`;
-  messagesContainer.appendChild(userDiv);
+
+  if (inputComplete != null) {
+
+    let userDiv = document.createElement("div");
+    userDiv.id = "user";
+    userDiv.className = "user response";
+    userDiv.innerHTML = `<img src="user.png" class="avatar"><span>${inputComplete}</span>`;
+    messagesContainer.appendChild(userDiv);
+
+  }
+
 
   let botDiv = document.createElement("div");
   let botImg = document.createElement("img");
@@ -139,6 +163,8 @@ function returnLink(product) {
       return "https://fisioproyectos.com/clases-de-baile-en-tenerife/";
     case 8:
       return "https://api.whatsapp.com/send/?phone=34646280592&text=Hola%2C+me+gustar%C3%ADa+reservar+una+sala+%EF%BF%BD-Gym+7%E2%82%AC%2Fh-Despacho+5%E2%82%AC%2Fh&app_absent=0";
+    case 10:
+      return "https://goo.gl/maps/2iYgxwCo2jEj1jBZ8"
   }
 
 
