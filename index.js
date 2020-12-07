@@ -20,15 +20,14 @@ try {
   }
 } catch { }
 
-
 //abre el chat
 function openChat() {
   let browser = getBrowser();
   //micro desabilitado en firefox
-  console.log(browser)
+
   if (browser == "chrome") {
     document.getElementById("voiceRec").style.display = "inline";
-  }else{
+  } else {
     document.getElementById("voiceRec").style.display = "none";
   }
   document.getElementById("input").style.display = "inline";
@@ -36,11 +35,10 @@ function openChat() {
   addChat("hola soy tu asistente de fisioproyectos, ¿en que puedo ayudarte?")
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const inputField = document.getElementById("input");
-  inputField.addEventListener("keydown", (e) => {
-    if (e.code === "Enter") {
+  inputField.addEventListener("keyup", (e) => {
+    if (e.key === "Enter") {
       let input = inputField.value;
       console.log(input)
       inputField.value = "";
@@ -49,9 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
-
-
 
 function output(arrayWords, inputComplete) {
   let product;
@@ -165,6 +160,10 @@ function returnLink(product) {
       return "https://api.whatsapp.com/send/?phone=34646280592&text=Hola%2C+me+gustar%C3%ADa+reservar+una+sala+%EF%BF%BD-Gym+7%E2%82%AC%2Fh-Despacho+5%E2%82%AC%2Fh&app_absent=0";
     case 10:
       return "https://goo.gl/maps/2iYgxwCo2jEj1jBZ8"
+    case 11:
+      return "tel:+34 646280592"
+    case 12:
+      return "mailto:fisioproyectos2014@gmail.com"
   }
 
 

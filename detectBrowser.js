@@ -12,7 +12,7 @@ function getBrowser() {
     if (es_ie) {
         browser = "Internet Explorer";
     }
-    var es_edge = navigator.userAgent.indexOf("edge") > -1;
+    var es_edge = navigator.userAgent.indexOf("Edg") > -1;
     if (es_edge) {
         browser = "edge";
     }

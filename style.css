@@ -119,6 +119,11 @@ input {
 		  width: 75vw;
 		  margin: 10vw;
 	  }
+	  .btnIniciar {
+		position:absolute;
+		left: calc(50% - 50px);
+		top: 20px;
+	  }
   }
   
  
